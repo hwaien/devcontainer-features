@@ -1,0 +1,17 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": ["source.fixAll"],
+  "cSpell.words": [
+    "Codespaces",
+    "dbaeumer",
+    "devcontainer",
+    "devcontainers",
+    "eamodio",
+    "esbenp",
+    "hwaien",
+    "localtime",
+    "medo64"
+  ],
+  "cSpell.ignorePaths": [".git/objects"]
+}
