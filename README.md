@@ -4,7 +4,7 @@ This repository contains a collection of [dev container Features](https://contai
 
 ## Contents
 
-This repository contains a _collection_ of two Features - `hello` and `color`. These Features serve as simple feature implementations. Each sub-section below shows a sample `devcontainer.json` alongside example usage of the Feature.
+This repository contains a _collection_ of Feature implementations. Each sub-section below shows a sample `devcontainer.json` usage.
 
 ### `match-host-time-zone`
 
