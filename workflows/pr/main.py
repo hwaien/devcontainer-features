@@ -8,6 +8,7 @@ def main():
     files = repo.get_contents('', branch)
     for f in files:
         print(f.path)
+        print(f.type)
 
 if __name__ == "__main__":
     main()
