@@ -14,7 +14,7 @@ The built container will match the host's time zone.
 {
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
-    "ghcr.io/hwaien/devcontainers-features/match-host-time-zone": {}
+    "ghcr.io/hwaien/devcontainer-features/match-host-time-zone": {}
   }
 }
 ```
@@ -47,12 +47,12 @@ Features are individually versioned by the `version` attribute in a Feature's `d
 This repo contains a GitHub Action [workflow](.github/workflows/release.yaml) that will publish each feature to GHCR. By default, each Feature will be prefixed with the `<owner>/<repo>` namespace. For example, the `match-host-time-zone` Feature in this repository can be referenced in a `devcontainer.json` with:
 
 ```
-ghcr.io/hwaien/devcontainers-features/match-host-time-zone:1
+ghcr.io/hwaien/devcontainer-features/match-host-time-zone:1
 ```
 
-The provided GitHub Action will also publish a third "metadata" package with just the namespace, eg: `ghcr.io/hwaien/devcontainers-features`. This contains information useful for tools aiding in Feature discovery.
+The provided GitHub Action will also publish a third "metadata" package with just the namespace, eg: `ghcr.io/hwaien/devcontainer-features`. This contains information useful for tools aiding in Feature discovery.
 
-'`hwaien/devcontainers-features`' is known as the feature collection namespace.
+'`hwaien/devcontainer-features`' is known as the feature collection namespace.
 
 ### Marking Feature Public
 
