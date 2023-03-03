@@ -1,5 +1,5 @@
+import os
 from github import Github
-
 
 def main():
     gh = Github(os.environ['GITHUB_TOKEN'])
