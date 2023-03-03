@@ -29,7 +29,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -e
-          python --version
+          python -m pip install -r workflows/pr/requirements.txt
+          python workflows/pr/main.py
           #echo "Start."
           ## Configure git and Push updates
           #git config --global user.email github-actions@github.com
