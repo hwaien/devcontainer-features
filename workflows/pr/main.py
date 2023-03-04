@@ -22,7 +22,7 @@ def main():
 
     print ('LOCAL DIFF')
     local_repo = Repo('')
-    for d in repo.head.commit.diff()
+    for d in repo.head.commit.diff():
         print(d)
 
 
