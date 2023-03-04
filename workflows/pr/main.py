@@ -24,7 +24,7 @@ def main():
     local_repo = git.Repo('')
     print ("local repo common git dir: ", local_repo.common_dir)
     print ('LOCAL DIFF')
-    for d in local_repo.index.diff():
+    for d in local_repo.index.diff(None):
         print(d)
 
 
