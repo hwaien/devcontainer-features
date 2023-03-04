@@ -1,4 +1,4 @@
-import glob from glob
+from glob import glob
 
 def main():
     for item in glob('src/*/devcontainer-feature.json')
