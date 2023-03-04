@@ -19,6 +19,7 @@ def main():
     for f in get_contents(remote_repo, '', ref):
         print('remote path: ', f.path)
         print('remote sha: ', f.sha)
+        print('local sha: ', hashlib.sha256(open(f.path,'rb').read()).hexdigest())
 
     local_repo = git.Repo('')
     print ("local repo common git dir: ", local_repo.common_dir)
