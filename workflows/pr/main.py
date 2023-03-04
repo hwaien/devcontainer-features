@@ -10,6 +10,8 @@ def main():
     local_repo = git.Repo('')
     diffs = local_repo.index.diff(None)
 
+    updated = False
+
     for d in diffs:
         path = d.a_path
         dirname = os.path.dirname(path)
@@ -18,8 +20,12 @@ def main():
             if (c.path == path):
                 with open(path) as inFile:
                     content = inFile.read() 
-                response = remote_repo.update_file(path, f'Auto-update {path}', content, c.sha, ref)
+                remote_repo.update_file(path, f'Auto-update {path}', content, c.sha, ref)
+                updated = True
                 break
 
+    return 0 if updated else 1
+
 if __name__ == "__main__":
-    main()
+    code = main()
+    sys.exit(code)
