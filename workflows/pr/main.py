@@ -20,8 +20,9 @@ def main():
         print('remote path: ', f.path)
         print('remote sha: ', f.sha)
 
-    print ('LOCAL DIFF')
     local_repo = Repo('')
+    print ("local repo common git dir: ", local_repo.common_dir)
+    print ('LOCAL DIFF')
     for d in repo.head.commit.diff():
         print(d)
 
