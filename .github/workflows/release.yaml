@@ -22,16 +22,23 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Create PR for Documentation
+      - name: "Bump versions"
+        run: |
+          set -e
+          echo "Start."
+          python -m pip install -r workflows/bump/requirements.txt
+          python workflows/bump/main.py
+
+      - name: "Create PR"
         id: push_image_info
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -e
           echo "Start."
-          branch=automated-documentation-update-$GITHUB_RUN_ID
+          branch=auto-update-$GITHUB_RUN_ID
           git checkout -b $branch
-          message='Automated documentation update'
+          message='Automated documentation and version update'
           git push origin "$branch"
           gh pr create --title "$message" --body "$message"
           export PR_BRANCH=$branch

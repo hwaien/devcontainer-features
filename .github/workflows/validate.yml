@@ -9,15 +9,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: "Run Python script: bump"
-        run: |
-          set -e
-          echo "Start."
-          python -m pip install -r workflows/bump/requirements.txt
-          python workflows/bump/main.py
-
-#      - name: "Validate devcontainer-feature.json files"
-#        uses: devcontainers/action@v1
-#        with:
-#          validate-only: "true"
-#          base-path-to-features: "./src"
+      - name: "Validate devcontainer-feature.json files"
+        uses: devcontainers/action@v1
+        with:
+          validate-only: "true"
+          base-path-to-features: "./src"
