@@ -14,8 +14,8 @@ def main():
     repo = gh.get_repo(os.environ['GITHUB_REPOSITORY'])
     ref = os.environ['GITHUB_REF_NAME']
     for f in get_contents(repo, '', ref):
-        print(f.path)
-        print(f.type)
+        print('remote path: ', f.path)
+        print('remote sha: ', f.sha)
 
 if __name__ == "__main__":
     main()
