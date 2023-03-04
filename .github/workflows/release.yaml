@@ -29,15 +29,19 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -e
+          echo "Start."
+          branch=automated-documentation-update-$GITHUB_RUN_ID
+          message='Automated documentation update'
+          git checkout -b $branch
+          git push origin "$branch"
+          gh pr create --title "$message" --body "$message"
+          export PR_BRANCH=$branch
           python -m pip install -r workflows/pr/requirements.txt
           python workflows/pr/main.py
-          #echo "Start."
           ## Configure git and Push updates
           #git config --global user.email github-actions@github.com
           #git config --global user.name github-actions
           #git config pull.rebase false
-          #branch=automated-documentation-update-$GITHUB_RUN_ID
-          #git checkout -b $branch
           #message='Automated documentation update'
           ## Add / update and commit
           #git add */**/README.md

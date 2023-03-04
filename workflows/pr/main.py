@@ -2,32 +2,24 @@ import os
 import github
 import git
 
-def get_contents(repo: github.Repository, path: str, ref: str):
-    for child in repo.get_contents(path, ref):
-        if (child.type == 'dir'):
-            for descendant in get_contents(repo, child.path, ref):
-                yield descendant
-        else:
-            yield child
-
-def get_local_diff_file_paths():
-    local_repo = git.Repo('')
-    diffs = local_repo.index.diff(None)
-    return [d.a_path for d in diffs]
-
 def main():
-
-    diffs = get_local_diff_file_paths()
-    for d in diffs:
-        print(d)
-
     gh = github.Github(os.environ['GITHUB_TOKEN'])
     remote_repo = gh.get_repo(os.environ['GITHUB_REPOSITORY'])
-    ref = os.environ['GITHUB_REF_NAME']
+    ref = os.environ['PR_BRANCH']
 
-    for f in get_contents(remote_repo, '', ref):
-        print('remote path: ', f.path)
-        print('remote sha: ', f.sha)
+    local_repo = git.Repo('')
+    diffs = local_repo.index.diff(None)
+
+    for d in diffs:
+        path = d.a_path
+        dirname = os.path.dirname(path)
+        remote_contents = remote_repo.get_contents(dirname, ref)
+        for c in remote_contents:
+            if (c.path == path):
+                with open(path) as inFile:
+                    content = inFile.read() 
+                response = remote_repo.update_file(path, f'Auto-update {path}', content, c.sha, ref)
+                break
 
 if __name__ == "__main__":
     main()
