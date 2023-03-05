@@ -1,14 +1,6 @@
 #!/bin/sh
 set -e
 
-apt_get_update()
-{
-    if [ "$(find /var/lib/apt/lists/* | wc -l)" = "0" ]; then
-        echo "Running apt-get update..."
-        apt-get update -y
-    fi
-}
-
 install_ssh() {
     echo "asdfasdfasdf"
     type ssh-keygen || keygenmissing=true
@@ -30,7 +22,7 @@ install_ssh() {
             fi
         else
             echo "apt-get exists in image."
-            apt_get_update
+            apt-get update -y
             apt-get -y install --no-install-recommends ssh
         fi
     else
