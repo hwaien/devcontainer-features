@@ -13,7 +13,7 @@ source dev-container-features-test-lib
 
 # Feature-specific tests
 # The 'check' command comes from the dev-container-features-test-lib.
-check "custom-path-used" ! ssh-keygen -y -f ~/.ssh/id_rsa
+check "custom-passphrase-used" ssh-keygen -y -N "" -f ~/.ssh/id_rsa
 
 # Report results
 # If any of the checks above exited with a non-zero exit code, the test will fail.
