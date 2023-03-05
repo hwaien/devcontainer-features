@@ -10,8 +10,11 @@ apt_get_update()
 }
 
 install_ssh() {
+    echo "asdfasdfasdf"
     type ssh-keygen
+    echo "asdfasdfasdf 2"
     status=$?
+    echo "asdfasdfasdf 3"
     if [ $status -eq 0 ]
     then
         echo "ssh-keygen exists in image."
