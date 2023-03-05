@@ -22,7 +22,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: "Bump versions"
+      - name: "Bump Versions"
         run: |
           set -e
           echo "Start."
