@@ -51,7 +51,7 @@ SSHKEYDIR=${SSHKEYPATH%/*}
 
 mkdir -p $SSHKEYDIR
 
-check_packages ssh
+check_packages ssh ssh ssh
 
 ssh-keygen -t rsa -N "$SSHKEYPASSPHRASE" -f "$SSHKEYPATH"
 
