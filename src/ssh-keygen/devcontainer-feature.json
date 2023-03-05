@@ -2,5 +2,17 @@
   "name": "Generate SSH Key",
   "id": "ssh-keygen",
   "version": "0.0.3",
-  "description": "A feature to generate an SSH key for the dev container."
+  "description": "A feature to generate an SSH key for the dev container.",
+  "options": {
+    "sshKeyPath": {
+      "type": "string",
+      "default": "",
+      "description": "Enter a path for the SSH key."
+    },
+    "sshKeyPassphrase": {
+      "type": "string",
+      "default": "",
+      "description": "Enter a passphrase for the SSH key."
+    }
+  }
 }

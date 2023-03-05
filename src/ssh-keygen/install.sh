@@ -1,6 +1,5 @@
 #!/bin/sh
-
-echo "Generating SSH key"
+set -e
 
 apt_get_update()
 {
@@ -17,10 +16,16 @@ check_packages() {
     fi
 }
 
-mkdir -p $_REMOTE_USER_HOME/.ssh/
+echo "Generating SSH key"
+
+SSHKEYPASSPHRASE=${SSHKEYPASSPHRASE:-""}
+SSHKEYPATH=${SSHKEYPATH:-"$_REMOTE_USER_HOME/.ssh/id_rsa"}
+SSHKEYDIR=${SSHKEYPATH%/*}
+
+mkdir -p $SSHKEYDIR
 
 check_packages ssh
 
-ssh-keygen -t rsa -N '' -f $_REMOTE_USER_HOME/.ssh/id_rsa
+ssh-keygen -t rsa -N "$SSHKEYPASSPHRASE" -f "$SSHKEYPATH"
 
-chown -R $_REMOTE_USER $_REMOTE_USER_HOME/.ssh/
+chown -R $_REMOTE_USER $SSHKEYDIR

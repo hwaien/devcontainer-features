@@ -1,0 +1,18 @@
+{
+  "custompath": {
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+      "ssh-keygen": {
+        "sshKeyPath": "/foo/bar/my_key"
+      }
+    }
+  },
+  "custompassphrase": {
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+      "ssh-keygen": {
+        "sshKeyPassphrase": "phrase1"
+      }
+    }
+  }
+}
