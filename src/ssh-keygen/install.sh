@@ -12,19 +12,25 @@ apt_get_update()
 install_ssh() {
     type ssh-keygen
     status=$?
-    if [ $status -ne 0 ]
+    if [ $status -eq 0 ]
     then
+        echo "ssh-keygen exists in image."
+    else
+        echo "ssh-keygen does not exist in image."
         type apt-get
         status=$?
         if [ $status -eq 0 ]
         then
+            echo "apt-get exists in image."
             apt_get_update
             apt-get -y install --no-install-recommends ssh
         else
+            echo "apt-get does not exist in image."
             type apk
             status=$?
             if [ $status -eq 0 ]
             then
+                echo "apk exists in image."
                 apk add ssh
             else
                 echo "no package manager"
