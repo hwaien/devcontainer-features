@@ -1,6 +1,6 @@
 {
   "name": "Generate SSH Key",
   "id": "ssh-keygen",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A feature to generate an SSH key for the dev container."
 }
