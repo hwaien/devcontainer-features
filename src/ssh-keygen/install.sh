@@ -11,7 +11,7 @@ apt_get_update()
 
 install_ssh() {
     echo "asdfasdfasdf"
-    type ssh-keygen
+    type ssh-keygen || true
     echo "asdfasdfasdf 2"
     status=$?
     echo "asdfasdfasdf 3"
