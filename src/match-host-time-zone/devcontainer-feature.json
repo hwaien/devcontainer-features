@@ -1,7 +1,7 @@
 {
   "name": "Match Host Time Zone",
   "id": "match-host-time-zone",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "A feature to make the dev container's time zone the same as the host's time zone.",
   "mounts": [
     {
