@@ -11,7 +11,12 @@ A feature to generate an SSH key for the dev container.
 }
 ```
 
+## Options
 
+| Options Id | Description | Type | Default Value |
+|-----|-----|-----|-----|
+| sshKeyPath | Enter a path for the SSH key. | string | - |
+| sshKeyPassphrase | Enter a passphrase for the SSH key. | string | - |
 
 
 
