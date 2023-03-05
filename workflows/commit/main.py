@@ -3,7 +3,7 @@ import github
 import git
 
 class GitHubContentFile:
-    def __init__(self, session: GitHubSession, file: github.ContentFile) -> None:
+    def __init__(self, session: 'GitHubSession', file: github.ContentFile) -> None:
         self.session = session
         self.file = file
 
