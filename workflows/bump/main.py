@@ -13,7 +13,7 @@ def bump(path: str):
     print(path)
     print(fileContent)
     with open(path, 'w') as outFile:
-        json.dump(fileContent, outFile, indent=4)
+        json.dump(fileContent, outFile, indent=2)
 
 def main():
     for metadata in glob('src/*/devcontainer-feature.json'):
