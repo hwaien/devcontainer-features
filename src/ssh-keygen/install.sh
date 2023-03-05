@@ -18,20 +18,20 @@ check_packages() {
 
 echo "Generating SSH key"
 
-PASSPHRASE=${PASSPHRASE:-"foo"}
-echo "The provided passphrase is: $PASSPHRASE"
+SSHKEYPASSPHRASE=${SSHKEYPASSPHRASE:-"foo"}
+echo "The provided passphrase is: $SSHKEYPASSPHRASE"
 
-PATH=${PATH:-"/home/root/.ssh/default/id_rsa"}
-echo "The provided path is: $PATH"
+SSHKEYPATH=${SSHKEYPATH:-"/home/root/.ssh/default/id_rsa"}
+echo "The provided path is: $SSHKEYPATH"
 
-if [ -z "$PATH" ];
-    PATH = $_REMOTE_USER_HOME/.ssh/id_rsa
+if [ -z "$SSHKEYPATH" ];
+    SSHKEYPATH = $_REMOTE_USER_HOME/.ssh/id_rsa
 fi
 
-mkdir -p ${PATH%/*}
+mkdir -p ${SSHKEYPATH%/*}
 
 check_packages ssh
 
-ssh-keygen -t rsa -N '$PASSPHRASE' -f $PATH
+ssh-keygen -t rsa -N '$SSHKEYPASSPHRASE' -f $SSHKEYPATH
 
-chown -R ${PATH%/*}
+chown -R ${SSHKEYPATH%/*}

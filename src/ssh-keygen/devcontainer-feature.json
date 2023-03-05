@@ -4,12 +4,12 @@
   "version": "0.0.3",
   "description": "A feature to generate an SSH key for the dev container.",
   "options": {
-    "path": {
+    "sshKeyPath": {
       "type": "string",
       "default": "",
       "description": "Enter a path for the SSH key."
     },
-    "passphrase": {
+    "sshKeyPassphrase": {
       "type": "string",
       "default": "",
       "description": "Enter a passphrase for the SSH key."
