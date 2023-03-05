@@ -2,9 +2,7 @@
 set -e
 
 install_ssh() {
-    echo "asdfasdfasdf"
     type ssh-keygen || keygenmissing=true
-    echo "asdfasdfasdf 3"
     if [ $keygenmissing = true ]
     then
         echo "ssh-keygen does not exist in image."
