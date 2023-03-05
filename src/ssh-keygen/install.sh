@@ -11,17 +11,17 @@ apt_get_update()
 
 install_ssh() {
     echo "asdfasdfasdf"
-    type ssh-keygen || missing=true
+    type ssh-keygen || keygenmissing=true
     echo "asdfasdfasdf 3"
-    if [ $missing = true ]
+    if [ $keygenmissing = true ]
     then
         echo "ssh-keygen does not exist in image."
-        type apt-get || missing=true
-        if [ $missing = true ]
+        type apt-get || aptgetmissing=true
+        if [ $aptgetmissing = true ]
         then
             echo "apt-get does not exist in image."
-            type apk || missing=true
-            if [ $missing = true ]
+            type apk || apkmissing=true
+            if [ $apkmissing = true ]
             then
                 echo "no package manager"
             else
