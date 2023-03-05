@@ -1,7 +1,7 @@
 {
   "name": "Generate SSH Key",
   "id": "ssh-keygen",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A feature to generate an SSH key for the dev container.",
   "options": {
     "sshKeyPath": {
