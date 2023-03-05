@@ -2,14 +2,13 @@ import os
 import github
 import git
 from pprint import pprint
-from typing import Dict, Union
 
 class GitHubContentFile:
     def __init__(self, session: 'GitHubSession', file: github.ContentFile) -> None:
         self.session = session
         self.file = file
 
-    def update(self, message: str, content: str) -> Dict[str, Union[github.ContentFile, github.Commit]]:
+    def update(self, message: str, content: str):
         repo = self.session.repo
         path = self.file.path
         sha = self.file.sha
