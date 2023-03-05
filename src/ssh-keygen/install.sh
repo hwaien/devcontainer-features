@@ -16,10 +16,6 @@ check_apt_packages() {
     fi
 }
 
-check_packages() {
-    check_apt_packages $@
-}
-
 echo "Generating SSH key"
 
 SSHKEYPASSPHRASE=${SSHKEYPASSPHRASE:-""}
@@ -28,8 +24,11 @@ SSHKEYDIR=${SSHKEYPATH%/*}
 
 mkdir -p $SSHKEYDIR
 
-if [[ type apt-get  ]]
-check_packages ssh ssh ssh
+if [[ `type apt-get` == apt-get* ]] ; then
+    check_apt_packages ssh
+else
+    echo "no apt-get"
+fi
 
 ssh-keygen -t rsa -N "$SSHKEYPASSPHRASE" -f "$SSHKEYPATH"
 
