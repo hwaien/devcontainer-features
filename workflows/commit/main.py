@@ -25,7 +25,7 @@ class GitHubSession:
         dirname = os.path.dirname(path)
         content_list = self.repo.get_contents(dirname, self.ref)
         for content in content_list:
-            if (content.path == path)
+            if (content.path == path):
                 return GitHubContentFile(self, content)
         raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), path)
 
