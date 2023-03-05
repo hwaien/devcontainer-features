@@ -24,10 +24,14 @@ echo "The provided passphrase is: $SSHKEYPASSPHRASE"
 SSHKEYPATH=${SSHKEYPATH:-"$_REMOTE_USER_HOME/.ssh/id_rsa"}
 echo "The provided path is: $SSHKEYPATH"
 
-mkdir -p ${SSHKEYPATH%/*}
+SSHKEYDIR=${SSHKEYPATH%/*}
+
+echo "The SSH directory is: $SSHKEYDIR"
+
+mkdir -p $SSHKEYDIR
 
 check_packages ssh
 
 ssh-keygen -t rsa -N '$SSHKEYPASSPHRASE' -f $SSHKEYPATH
 
-chown -R ${SSHKEYPATH%/*}
+chown -R $SSHKEYDIR
