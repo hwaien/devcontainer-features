@@ -34,4 +34,4 @@ check_packages ssh
 
 ssh-keygen -t rsa -N '$SSHKEYPASSPHRASE' -f $SSHKEYPATH
 
-chown -R $SSHKEYDIR
+chown -R $_REMOTE_USER $SSHKEYDIR
