@@ -7,10 +7,6 @@ apt_get_update()
     if [ "$(find /var/lib/apt/lists/* | wc -l)" = "0" ]; then
         echo "Running apt-get update..."
         apt-get update -y
-        echo "cat /etc/apt/sources.list"
-        cat /etc/apt/sources.list
-        echo "ls /etc/apt/sources.list.d"
-        ls /etc/apt/sources.list.d
     fi
 }
 
@@ -24,8 +20,6 @@ check_packages() {
 echo $_REMOTE_USER_HOME
 
 mkdir -p $_REMOTE_USER_HOME/.ssh/
-
-#check_packages curl
 
 check_packages ssh
 
