@@ -11,7 +11,7 @@
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
     "features": {
       "ssh-keygen": {
-        "sshKeyPassphrase": ""
+        "sshKeyPassphrase": "phrase1"
       }
     }
   }
