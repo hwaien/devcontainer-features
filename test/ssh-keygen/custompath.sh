@@ -13,7 +13,7 @@ source dev-container-features-test-lib
 
 # Feature-specific tests
 # The 'check' command comes from the dev-container-features-test-lib.
-check "custom-path-used" cat /foo/bar/id_rsa.pub
+check "custom-path-used" cat /foo/bar/my_key.pub
 
 # Report results
 # If any of the checks above exited with a non-zero exit code, the test will fail.

@@ -3,7 +3,7 @@
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
     "features": {
       "ssh-keygen": {
-        "sshKeyPath": "/foo/bar/id_rsa"
+        "sshKeyPath": "/foo/bar/my_key"
       }
     }
   },
