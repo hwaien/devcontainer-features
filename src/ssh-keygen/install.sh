@@ -1,6 +1,13 @@
 #!/bin/sh
+set -e
 
 echo "Generating SSH key"
+
+PATH=${PATH:-"/home/root/.ssh/default/id_rsa"}
+echo "The provided path is: $PATH"
+
+PASSPHRASE=${PASSPHRASE:-"foo"}
+echo "The provided passphrase is: $PASSPHRASE"
 
 apt_get_update()
 {
@@ -17,10 +24,10 @@ check_packages() {
     fi
 }
 
-mkdir -p $_REMOTE_USER_HOME/.ssh/
+mkdir -p ${PATH%/*}
 
 check_packages ssh
 
-ssh-keygen -t rsa -N '' -f $_REMOTE_USER_HOME/.ssh/id_rsa
+ssh-keygen -t rsa -N '$PASSPHRASE' -f $PATH
 
-chown -R $_REMOTE_USER $_REMOTE_USER_HOME/.ssh/
+chown -R ${PATH%/*}
