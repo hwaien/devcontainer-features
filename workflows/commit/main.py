@@ -3,11 +3,11 @@ import github
 import git
 
 class GitHubContentFile:
-    def __init__(self: GitHubContentFile, session: GitHubSession, file: github.ContentFile) -> None:
+    def __init__(self, session: GitHubSession, file: github.ContentFile) -> None:
         self.session = session
         self.file = file
 
-    def update(self: GitHubContentFile, message: str, content: str) -> None:
+    def update(self, message: str, content: str) -> None:
         repo = self.session.repo
         path = self.file.path
         sha = self.file.sha
@@ -15,13 +15,13 @@ class GitHubContentFile:
         repo.update_file(path, message, content, sha, ref)
 
 class GitHubSession:
-    def __init__(self: GitHubSession) -> None:
+    def __init__(self) -> None:
         token = os.environ['GITHUB_TOKEN']
         repo_name = os.environ['GITHUB_REPOSITORY']
         self.ref = os.environ['PR_BRANCH']
         self.repo = github.Github(token).get_repo(repo_name)
 
-    def get_file(self: GitHubSession, path: str) -> GitHubContentFile:
+    def get_file(self, path: str) -> GitHubContentFile:
         dirname = os.path.dirname(path)
         content_list = self.repo.get_contents(dirname, self.ref)
         for content in content_list:
