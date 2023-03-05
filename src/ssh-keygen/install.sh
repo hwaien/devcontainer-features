@@ -17,8 +17,6 @@ check_packages() {
     fi
 }
 
-echo $_REMOTE_USER_HOME
-
 mkdir -p $_REMOTE_USER_HOME/.ssh/
 
 check_packages ssh
