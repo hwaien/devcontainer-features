@@ -37,7 +37,7 @@ def main():
     diff_sequence = local_repo.index.diff(None)
     path_sequence = (diff.a_path for diff in diff_sequence)
 
-    for path in path_sequence
+    for path in path_sequence:
         remote_file = remote_repo.get_file(path)
         with open(path) as local_file:
             content = local_file.read()
