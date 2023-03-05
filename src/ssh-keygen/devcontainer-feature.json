@@ -6,7 +6,7 @@
   "options": {
     "path": {
       "type": "string",
-      "default": "$_REMOTE_USER_HOME/.ssh/id_rsa",
+      "default": "",
       "description": "Enter a path for the SSH key."
     },
     "passphrase": {
