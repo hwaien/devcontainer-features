@@ -11,34 +11,30 @@ apt_get_update()
 
 install_ssh() {
     echo "asdfasdfasdf"
-    type ssh-keygen || true
-    echo "asdfasdfasdf 2"
-    status=$?
+    type ssh-keygen || missing=true
     echo "asdfasdfasdf 3"
-    if [ $status -eq 0 ]
+    if [ $missing = true ]
     then
-        echo "ssh-keygen exists in image."
-    else
         echo "ssh-keygen does not exist in image."
-        type apt-get
-        status=$?
-        if [ $status -eq 0 ]
+        type apt-get || missing=true
+        if [ $missing = true ]
         then
+            echo "apt-get does not exist in image."
+            type apk || missing=true
+            if [ $missing = true ]
+            then
+                echo "no package manager"
+            else
+                echo "apk exists in image."
+                apk add ssh
+            fi
+        else
             echo "apt-get exists in image."
             apt_get_update
             apt-get -y install --no-install-recommends ssh
-        else
-            echo "apt-get does not exist in image."
-            type apk
-            status=$?
-            if [ $status -eq 0 ]
-            then
-                echo "apk exists in image."
-                apk add ssh
-            else
-                echo "no package manager"
-            fi
         fi
+    else
+        echo "ssh-keygen exists in image."
     fi
 }
 
