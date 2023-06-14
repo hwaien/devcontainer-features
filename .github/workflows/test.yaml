@@ -13,6 +13,7 @@ jobs:
     strategy:
       matrix:
         features:
+          - git-remote-gcrypt
           - match-host-time-zone
           - ssh-keygen
         baseImage:
@@ -35,6 +36,7 @@ jobs:
     strategy:
       matrix:
         features:
+          - git-remote-gcrypt
           - match-host-time-zone
           - ssh-keygen
     steps:
