@@ -6,6 +6,19 @@ This repository contains a collection of [dev container Features](https://contai
 
 This repository contains a _collection_ of Feature implementations. Each sub-section below shows a sample `devcontainer.json` usage.
 
+### `git-remote-gcrypt`
+
+Encrypt/decrypt Git remotes with GnuPG.
+
+```jsonc
+{
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/hwaien/devcontainer-features/git-remote-gcrypt": {}
+  }
+}
+```
+
 ### `match-host-time-zone`
 
 The built container will match the host's time zone.
