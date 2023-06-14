@@ -1,6 +1,6 @@
 {
   "name": "Git Remote Encryption",
   "id": "git-remote-gcrypt",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Git remote helper to push and pull from repositories encrypted with GnuPG."
 }
