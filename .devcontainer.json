@@ -9,7 +9,8 @@
         "esbenp.prettier-vscode",
         "mads-hartmann.bash-ide-vscode",
         "medo64.render-crlf",
-        "streetsidesoftware.code-spell-checker"
+        "streetsidesoftware.code-spell-checker",
+        "timonwong.shellcheck"
       ]
     }
   },
