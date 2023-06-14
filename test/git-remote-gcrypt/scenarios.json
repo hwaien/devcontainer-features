@@ -1,0 +1,8 @@
+{
+  "installation": {
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+      "git-remote-gcrypt": {}
+    }
+  }
+}
