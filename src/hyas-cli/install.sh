@@ -12,4 +12,6 @@ if ! type npm > /dev/null 2>&1; then
     exit 1
 fi
 
+npm install -g @hyas/cli@"$VERSION"
+
 echo "Hyas CLI successfully installed."
