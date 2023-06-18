@@ -1,6 +1,6 @@
 {
   "id": "hyas-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "name": "Hyas CLI",
   "documentationURL": "https://github.com/hwaien/devcontainer-features/tree/main/src/hyas-cli",
   "description": "Hyas CLI is a command-line interface tool that you use to initialize, develop, scaffold, and maintain a Hugo website directly from a command shell.",
@@ -8,7 +8,9 @@
     "version": {
       "default": "latest",
       "description": "Select the version to install.",
-      "proposals": ["latest"],
+      "proposals": [
+        "latest"
+      ],
       "type": "string"
     }
   }
