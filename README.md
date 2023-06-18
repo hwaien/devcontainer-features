@@ -19,6 +19,19 @@ Encrypt/decrypt Git remotes with GnuPG.
 }
 ```
 
+### `hyas-cli`
+
+A tool to help create and maintain Hugo websites.
+
+```jsonc
+{
+  "image": "mcr.microsoft.com/devcontainers/typescript-node",
+  "features": {
+    "ghcr.io/hwaien/devcontainer-features/hyas-cli": {}
+  }
+}
+```
+
 ### `match-host-time-zone`
 
 The built container will match the host's time zone.
