@@ -1,8 +1,8 @@
 {
   "installation": {
-    "image": "mcr.microsoft.com/devcontainers/typescript-node"
-  },
-  "features": {
-    "hyas-cli": {}
+    "image": "mcr.microsoft.com/devcontainers/typescript-node",
+    "features": {
+      "hyas-cli": {}
+    }
   }
 }
