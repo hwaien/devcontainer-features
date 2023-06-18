@@ -4,5 +4,11 @@
     "features": {
       "hyas-cli": {}
     }
+  },
+  "npm-dependency": {
+    "image": "mcr.microsoft.com/devcontainers/base",
+    "features": {
+      "hyas-cli": {}
+    }
   }
 }
