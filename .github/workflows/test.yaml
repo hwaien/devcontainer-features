@@ -36,6 +36,7 @@ jobs:
       matrix:
         features:
           - git-remote-gcrypt
+          - hyas-cli
           - match-host-time-zone
           - ssh-keygen
     steps:
